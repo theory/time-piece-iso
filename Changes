@@ -1,0 +1,10 @@
+Revision history for Perl extension Time::Object::ISO.
+
+0.03  2002-05-10T15:18:53
+      - No chnages - replaces empty 0.02 file uploaded to the CPAN.
+
+0.02  2002-05-09T16:50:13
+      - Added more credit to Matt Seargent for providing Time::Piece.
+
+0.01  2002-04-26T14:46:58
+      - Original (unreleased) version.

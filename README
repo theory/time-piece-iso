@@ -1,0 +1,34 @@
+Time::Piece::ISO version 0.03
+=============================
+
+This module subclasses Matt Seargent's Time::Piece module in order to change
+its stringification and string comparison behavior to use the ISO 8601
+format instead of localtime's ctime format. Although it does break the
+backwards compatibility with the builtin localtime and gmtime functions that
+Time::Piece offers, Time::Piece::ISO is designed to promote the more
+standard ISO format as a new way of handling dates.
+
+I decided to create this module for two simple reasons: First, default
+support for the ISO 8601 date format seems to be the direction in which Perl
+6 is heading. And second, the ISO 8601 format tends to be more widely
+compatible with RDBMS date time column type formats.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module subclasses and requires the Time::Piece module from the CPAN.
+
+COPYRIGHT AND LICENCE
+
+Copyright (c) 2002, David Wheeler. All Rights Reserved.
+
+This module is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
