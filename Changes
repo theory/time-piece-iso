@@ -1,6 +1,10 @@
 Revision history for Perl extension Time::Object::ISO.
 
-0.04
+0.05
+      - Switched to Module::Build.
+      - Added note about preferring DateTime now.
+
+0.04  2002-07-20T02:26:37
       - Removed Time zone dependency from test script.
       - Added two more tests.
       - Reorganized package so that library is in lib subdirectory.

@@ -10,7 +10,7 @@ require Exporter;
 @EXPORT = @Time::Piece::EXPORT;
 %EXPORT_TAGS = %Time::Piece::EXPORT_TAGS;
 
-$VERSION = "0.04";
+$VERSION = "0.05";
 
 use overload '""' => \&iso,
              cmp  => \&str_compare;
@@ -61,6 +61,9 @@ support for the ISO 8601 date format seems to be the direction in which Perl
 6 is heading. And second, the ISO 8601 format tends to be more widely
 compatible with RDBMS date time column type formats.
 
+That said, the L<DateTime|DateTime> module has since come to be, and it should
+probably be preferred to this module whenever possible.
+
 =head1 EXPORT
 
 Like Time::Piece, Time::Piece::ISO exports two functions by default. These
@@ -107,11 +110,23 @@ David Wheeler <david@wheeler.net>, extending Matt Seargent's
 
 =head1 SEE ALSO
 
-L<Time::Piece|Time::Piece>
+=over 4
+
+=item L<Time::Piece|Time::Piece>
+
+The base class for Time::Piece::ISO.
+
+=item L<DateTime|DateTime>
+
+The base class for the Perl date/time suite. This will likely become the
+canonical date and time module, and should be used in preference to
+Time::Piece::ISO whenever possible.
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2000-2002, David Wheeler. All Rights Reserved.
+Copyright (c) 2002-2003, David Wheeler. All Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

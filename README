@@ -1,4 +1,4 @@
-Time::Piece::ISO version 0.04
+Time::Piece::ISO version 0.05
 =============================
 
 This module subclasses Matt Seargent's Time::Piece module in order to change
@@ -13,9 +13,19 @@ support for the ISO 8601 date format seems to be the direction in which Perl
 6 is heading. And second, the ISO 8601 format tends to be more widely
 compatible with RDBMS date time column type formats.
 
+That said, the DateTime module has since come to be, and it should probably be
+preferred to this module whenever possible.
+
 INSTALLATION
 
-To install this module type the following:
+To install this module, type the following:
+
+   perl Build.PL
+   ./Build
+   ./Build test
+   ./Build install
+
+Or, if you don't have Module::Build installed, type the following:
 
    perl Makefile.PL
    make
@@ -28,7 +38,7 @@ This module subclasses and requires the Time::Piece module from the CPAN.
 
 COPYRIGHT AND LICENCE
 
-Copyright (c) 2002, David Wheeler. All Rights Reserved.
+Copyright (c) 2002-2003, David Wheeler. All Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
