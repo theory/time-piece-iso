@@ -10,7 +10,7 @@ require Exporter;
 @EXPORT = @Time::Piece::EXPORT;
 %EXPORT_TAGS = %Time::Piece::EXPORT_TAGS;
 
-$VERSION = "0.03";
+$VERSION = "0.04";
 
 use overload '""' => \&iso,
              cmp  => \&str_compare;

@@ -1,7 +1,12 @@
 Revision history for Perl extension Time::Object::ISO.
 
+0.04
+      - Removed Time zone dependency from test script.
+      - Added two more tests.
+      - Reorganized package so that library is in lib subdirectory.
+
 0.03  2002-05-10T15:18:53
-      - No chnages - replaces empty 0.02 file uploaded to the CPAN.
+      - No changes - replaces empty 0.02 file uploaded to the CPAN.
 
 0.02  2002-05-09T16:50:13
       - Added more credit to Matt Seargent for providing Time::Piece.
