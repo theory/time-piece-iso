@@ -1,34 +1,36 @@
 package Time::Piece::ISO;
 
-use strict;
 use vars qw($VERSION @ISA @EXPORT %EXPORT_TAGS);
 use Time::Piece ();
-require Exporter;
 
-@ISA = qw(Time::Piece Exporter);
+@ISA = qw(Time::Piece);
 
 @EXPORT = @Time::Piece::EXPORT;
 %EXPORT_TAGS = %Time::Piece::EXPORT_TAGS;
 
-$VERSION = "0.05";
+$VERSION = "0.10";
 
 use overload '""' => \&iso,
              cmp  => \&str_compare;
 
-#sub iso { $_[0]->SUPER::datetime(date => '-', time => ':', T => 'T' ) }
-sub iso { $_[0]->SUPER::datetime }
+#sub iso { $_[0]->datetime(date => '-', time => ':', T => 'T' ) }
+sub iso { $_[0]->datetime }
 
 sub str_compare {
     my ($lhs, $rhs, $reverse) = @_;
-    if (UNIVERSAL::isa($rhs, 'Time::Piece')) {
-        $rhs = "$rhs";
-    }
+    $rhs = $rhs->datetime if UNIVERSAL::isa($rhs, 'Time::Piece');
     return $reverse ? $rhs cmp $lhs->datetime : $lhs->datetime cmp $rhs;
 }
 
 # Rebless into this class.
 sub localtime { bless &Time::Piece::localtime, __PACKAGE__ }
-sub gmtime { bless &Time::Piece::gmtime, __PACKAGE__ }
+sub gmtime    { bless &Time::Piece::gmtime, __PACKAGE__ }
+
+sub strptime {
+    # Default to ISO 8601 format in strptime.
+    $_[2] = '%Y-%m-%dT%H:%M:%S' unless defined $_[2];
+    bless &Time::Piece::strptime, __PACKAGE__;
+}
 
 1;
 __END__
@@ -47,6 +49,10 @@ Time::Piece::ISO - ISO 8601 Subclass of Time::Piece
   print "Time is $t\n"; # prints "Time is 2002-04-25T21:17:52"
   print "Year is ", $t->year, "\n";
 
+  $t = Time::Piece::ISO->strptime('2002-04-25T21:17:52');
+  print "Time is $t\n"; # prints "Time is 2002-04-25T21:17:52"
+  print "Year is ", $t->year, "\n";
+
 =head1 DESCRIPTION
 
 This module subclasses Time::Piece in order to change its stringification
@@ -56,13 +62,18 @@ with the builtin localtime and gmtime functions that Time::Piece offers,
 Time::Piece::ISO is designed to promote the more standard ISO format as a
 new way of handling dates.
 
+This module also overrides Time::Piece's C<strptime()> method to return a
+Time::Piece::ISO object, and to default to the ISO-8601 format
+("%Y-%m-%dT%H:%M:%S") instead of the ctime format for parsing date/time
+strings.
+
 I decided to create this module for two simple reasons: First, default
 support for the ISO 8601 date format seems to be the direction in which Perl
 6 is heading. And second, the ISO 8601 format tends to be more widely
 compatible with RDBMS date time column type formats.
 
-That said, the L<DateTime|DateTime> module has since come to be, and it should
-probably be preferred to this module whenever possible.
+That said, the L<DateTime|DateTime> module has since been developed and
+released, and it should probably be preferred to this module whenever possible.
 
 =head1 EXPORT
 
@@ -88,12 +99,26 @@ without importing any of its functions:
 
 =head1 METHODS
 
+=head2 iso
+
 Time::Piece::ISO adds one method to the many already offered by Time::Piece.
 The iso() method acts as a synonym for Time::Piece's datetime() method, but
 is guaranteed to always return a strict ISO 8601 date string.
 
   my $t = localtime;
   print "Time is ", $t->iso, "\n"; # prints "Time is 2002-04-25T21:17:52"
+
+=head2 strptime
+
+Time::Piece::ISO overrides Time::Piece's C<strptime()> method to return a
+Time::Piece::ISO object, and to default to the ISO-8601 format
+("%Y-%m-%dT%H:%M:%S") instead of the ctime format for parsing date/time
+strings.
+
+  my $t = Time::Piece::ISO->strptime('2002-04-25T21:17:52');
+  print "Time is $t\n"; # prints "Time is 2002-04-25T21:17:52"
+  print "Year is ", $t->year, "\n";
+
 
 =head1 OVERLOADING
 
@@ -105,7 +130,7 @@ Time::Piece.
 
 =head1 AUTHOR
 
-David Wheeler <david@wheeler.net>, extending Matt Seargent's
+David Wheeler <david@justatheory.com>, extending Matt Seargent's
 <matt@seargent.org> L<Time::Piece|Time::Piece> module.
 
 =head1 SEE ALSO
@@ -126,7 +151,7 @@ Time::Piece::ISO whenever possible.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2002-2003, David Wheeler. All Rights Reserved.
+Copyright (c) 2002-2004, David Wheeler. All Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

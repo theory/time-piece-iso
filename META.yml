@@ -1,15 +1,18 @@
 --- #YAML:1.0
 name: Time-Piece-ISO
-version: 0.05
+version: 0.10
+author:
+  - |-
+    David Wheeler <david@justatheory.com>, extending Matt Seargent's
+    <matt@seargent.org> L<Time::Piece|Time::Piece> module.
+abstract: ISO 8601 Subclass of Time::Piece
 license: perl
-distribution_type: module
 requires:
   Time::Piece: 1.01
-recommends: {}
-build_requires: {}
-conflicts: {}
+build_requires:
+  Test::Simple: 0.17
 provides:
   Time::Piece::ISO:
     file: lib/Time/Piece/ISO.pm
-    version: 0.05
-generated_by: Module::Build version 0.19_05
+    version: 0.10
+generated_by: Module::Build version 0.26

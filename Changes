@@ -1,6 +1,15 @@
 Revision history for Perl extension Time::Object::ISO.
 
-0.05
+0.10  2004-12-09T06:03:25
+      - Possible backwards compatability change: Added override for
+        Time::Piece's implementation of strptime to return a Time::Piece::ISO
+        object and to default to the ISO 8601 format instead of the ctime
+        format. Thanks to Dagfinn Ilmari Mannsåker for the spot!
+      - Switched to Test::More for tests.
+      - Switched to Test::Pod 1.20 in POD tests.
+      - Various minor refactorings.
+
+0.05  Tue Aug 26 03:45:32 2003
       - Switched to Module::Build.
       - Added note about preferring DateTime now.
 
