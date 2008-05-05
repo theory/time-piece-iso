@@ -1,5 +1,10 @@
 Revision history for Perl extension Time::Object::ISO.
 
+0.11  2008-05-05T19:35:45
+      - Added the "configure_requires" parameter to Build.PL.
+      - Update copyright.
+      - Added a link to the Subversion repository.
+
 0.10  2004-12-09T06:03:25
       - Possible backwards compatability change: Added override for
         Time::Piece's implementation of strptime to return a Time::Piece::ISO

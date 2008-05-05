@@ -1,4 +1,4 @@
-Time::Piece::ISO version 0.10
+Time::Piece::ISO version 0.11
 =============================
 
 This module subclasses Matt Seargent's Time::Piece module in order to change
@@ -38,7 +38,7 @@ This module subclasses and requires the Time::Piece module from the CPAN.
 
 COPYRIGHT AND LICENCE
 
-Copyright (c) 2002-2004, David Wheeler. All Rights Reserved.
+Copyright (c) 2002-2008, David Wheeler. Some Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

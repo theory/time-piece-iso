@@ -3,8 +3,13 @@ use Module::Build;
 my $build = Module::Build->new(
     module_name        => 'Time::Piece::ISO',
     license            => 'perl',
-    requires           => { Time::Piece  => '1.01' },
-    build_requires     => { Test::Simple => '0.17' },
+    requires           => { Time::Piece     => '1.01'   },
+    configure_requires => { 'Module::Build' => '0.2701' },
+    recommends         => { 'Test::Pod'     => '1.20'   },
+    build_requires     => {
+        'Module::Build' => '0.2701',
+        'Test::More'    => '0.17',
+    },
     create_makefile_pl => 'passthrough',
 );
 $build->create_build_script;

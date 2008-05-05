@@ -8,7 +8,7 @@ use Time::Piece ();
 @EXPORT = @Time::Piece::EXPORT;
 %EXPORT_TAGS = %Time::Piece::EXPORT_TAGS;
 
-$VERSION = "0.10";
+$VERSION = '0.11';
 
 use overload '""' => \&iso,
              cmp  => \&str_compare;
@@ -128,6 +128,15 @@ Time::Piece::ISO. This is so that it will evaluate and and compare the time
 only in an ISO 8601 format rather than the ctime date format used by the
 Time::Piece.
 
+=head1 SUPPORT
+
+This module is stored in an open repository at the following address:
+
+L<https://svn.kineticode.com/Time-Piece-ISO/trunk/>
+
+Patches against Time::Piece::ISO are welcome. Please send bug reports to
+<bug-time-piece-iso@rt.cpan.org>.
+
 =head1 AUTHOR
 
 David Wheeler <david@justatheory.com>, extending Matt Seargent's
@@ -151,7 +160,7 @@ Time::Piece::ISO whenever possible.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2002-2004, David Wheeler. All Rights Reserved.
+Copyright (c) 2002-2008, David Wheeler. Some Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
