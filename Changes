@@ -1,5 +1,7 @@
 Revision history for Perl extension Time::Object::ISO.
 
+0.12
+
 0.11  2008-05-05T19:35:45
       - Added the "configure_requires" parameter to Build.PL.
       - Update copyright.

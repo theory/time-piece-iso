@@ -8,7 +8,7 @@ use Time::Piece ();
 @EXPORT = @Time::Piece::EXPORT;
 %EXPORT_TAGS = %Time::Piece::EXPORT_TAGS;
 
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 use overload '""' => \&iso,
              cmp  => \&str_compare;
