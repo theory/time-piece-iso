@@ -11,5 +11,12 @@ my $build = Module::Build->new(
         'Test::More'    => '0.17',
     },
     create_makefile_pl => 'traditional',
+    meta_merge => {
+        resources => {
+            homepage   => 'http://search.cpan.org/dist/Time-Piece-ISO/',
+            bugtracker => 'http://github.com/theory/time-piece-iso/issues/',
+            repository => 'http://github.com/theory/time-piece-iso/',
+        }
+    },
 );
 $build->create_build_script;

@@ -130,12 +130,13 @@ Time::Piece.
 
 =head1 SUPPORT
 
-This module is stored in an open repository at the following address:
+This module is stored in an open L<GitHub
+repository|http://github.com/theory/time-piece-iso/>. Feel free to fork and
+contribute!
 
-L<https://svn.kineticode.com/Time-Piece-ISO/trunk/>
-
-Patches against Time::Piece::ISO are welcome. Please send bug reports to
-<bug-time-piece-iso@rt.cpan.org>.
+Please file bug reports via L<GitHub
+Issues|http://github.com/theory/time-piece-iso/issues/> or by sending mail to
+L<bug-Time-Piece-ISO@rt.cpan.org|mailto:bug-Time-Piece-ISO@rt.cpan.org>.
 
 =head1 AUTHOR
 

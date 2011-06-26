@@ -1,6 +1,8 @@
 Revision history for Perl extension Time::Object::ISO.
 
 0.12
+      - Moved repostitory to [GitHub](https://github.com/theory/time-piece-iso/).
+      - Switched to a "traditional" `Makefile.PL`.
 
 0.11  2008-05-05T19:35:45
       - Added the "configure_requires" parameter to Build.PL.
