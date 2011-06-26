@@ -10,6 +10,6 @@ my $build = Module::Build->new(
         'Module::Build' => '0.2701',
         'Test::More'    => '0.17',
     },
-    create_makefile_pl => 'passthrough',
+    create_makefile_pl => 'traditional',
 );
 $build->create_build_script;
