@@ -1,4 +1,4 @@
-Time::Piece::ISO version 0.12
+Time::Piece::ISO version 0.13
 =============================
 
 This module subclasses Matt Seargent's
