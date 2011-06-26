@@ -140,7 +140,7 @@ L<bug-Time-Piece-ISO@rt.cpan.org|mailto:bug-Time-Piece-ISO@rt.cpan.org>.
 
 =head1 AUTHOR
 
-David Wheeler <david@justatheory.com>, extending Matt Seargent's
+David E. Wheeler <david@justatheory.com>, extending Matt Seargent's
 <matt@seargent.org> L<Time::Piece|Time::Piece> module.
 
 =head1 SEE ALSO
@@ -161,7 +161,7 @@ Time::Piece::ISO whenever possible.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2002-2008, David Wheeler. Some Rights Reserved.
+Copyright (c) 2002-2011, David E. Wheeler. Some Rights Reserved.
 
 This module is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
